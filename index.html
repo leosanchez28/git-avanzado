@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-   <script src="https://cdn.jsdelivr.net/npm/p5@2.3.3/lib/p5.min.js"></script>
-    <script src="sketch.js"></script> 
-    <title>Document</title>
+
+    <!-- Libraries first: p5 then ml5. ml5 1.x is p5 2.x compatible. -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.3/lib/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.js"></script>
+
+    <!--
+      Modules before sketch.js: sketch.js is the composition root and calls
+      into all three, so they must be on window by the time it runs.
+      Do NOT add type="module" to these - p5 global mode cannot see setup()
+      or draw() declared inside a module scope.
+    -->
+    <script src="js/handpose.js"></script>
+    <script src="js/gamelogic.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="sketch.js"></script>
+
+    <title>Hand tracking</title>
 </head>
 <body>
-    
 </body>
 </html>
